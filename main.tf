@@ -19,10 +19,13 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "ubuntu" {
+  count = "${terraform.workspace == "my-app-dev" ? 2 : 1}"
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
   tags = {
-    Name = var.instance_name
+
+    Name = "${terraform.workspace}-${count.index}"
   }
 }
+

@@ -1,9 +1,9 @@
 output "instance_ami" {
-  value = aws_instance.ubuntu.ami
+  value = aws_instance.ubuntu.*.ami
 }
 
 output "instance_arn" {
-  value = aws_instance.ubuntu.arn
+  value = aws_instance.ubuntu.*.arn
 }
 
 output "current_workspace_name" {
