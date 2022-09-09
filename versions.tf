@@ -1,7 +1,7 @@
 terraform {
 
   cloud {
-    organization = "hashicorp-learn"
+    organization = "gkranasinghe"
 
     workspaces {
       name = "learn-terraform-cloud"
@@ -12,6 +12,7 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.28.0"
+      
     }
   }
 
