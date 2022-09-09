@@ -1,12 +1,12 @@
 terraform {
 
-  # cloud {
-  #   organization = "gkranasinghe"
+  backend "remote" {
+    organization = "gkranasinghe"
 
-  #   workspaces {
-  #     name = "learn-terraform-cloud"
-  #   }
-  # }
+    workspaces {
+      prefix = "my-app-"
+    }
+  }
 
   required_providers {
     aws = {
